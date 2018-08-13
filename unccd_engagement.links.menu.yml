@@ -1,0 +1,9 @@
+engagement.campaign_admin.list:
+  title: UNCCD Campaigns
+  parent: system.admin_structure
+  route_name: engagement.campaign_admin.list
+
+engagement.contest_admin.list:
+  title: UNCCD Contests
+  parent: system.admin_structure
+  route_name: engagement.contest_admin.list

@@ -1,0 +1,173 @@
+# Public routes
+
+## Campaigns
+
+engagement.campaign.view:
+  path: '/campaign/{id}'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\CampaignController::view'
+    _title_callback: '\Drupal\unccd_engagement\Controller\CampaignController::viewTitle'
+  requirements:
+    _permission: 'access content'
+
+engagement.campaign.support:
+  path: '/campaign/{id}/support'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\CampaignController::support'
+    _title: 'Support Campaign'
+  requirements:
+    _permission: 'access content'
+
+## Contests
+
+engagement.contest.view:
+  path: '/contest/{id}'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\ContestController::view'
+    _title_callback: '\Drupal\unccd_engagement\Controller\ContestController::viewTitle'
+  requirements:
+    _permission: 'access content'
+
+
+engagement.contest.vote:
+  path: '/contest/{contest_id}/vote/{entry_id}'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\ContestController::vote'
+    _title: 'Vote on Contest'
+  requirements:
+    _permission: 'access content'
+
+
+engagement.contest.enter:
+  path: '/contest/{id}/enter'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\ContestController::enter'
+    _title: 'Enter Contest'
+  requirements:
+    _permission: 'access content'
+
+# Admin routes
+
+## Campaigns
+
+engagement.campaign_admin.list:
+  path: '/admin/structure/campaigns'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\CampaignAdminController::campaignList'
+    _title: 'Manage campaigns'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage campaigns'
+
+engagement.campaign_admin.add:
+  path: '/admin/structure/campaigns/add'
+  defaults:
+    _form: '\Drupal\unccd_engagement\Form\AddCampaignForm'
+    _title: 'Add campaign'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage campaigns'
+
+engagement.campaign_admin.edit:
+  path: '/admin/structure/campaigns/edit/{id}'
+  defaults:
+    _form: '\Drupal\unccd_engagement\Form\EditCampaignForm'
+    _title: 'Edit campaign'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage campaigns'
+
+engagement.campaign_admin.delete:
+  path: '/admin/structure/campaigns/delete/{id}'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\CampaignAdminController::deleteCampaign'
+    _title: 'Delete campaign'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage campaigns'
+
+## Contests
+engagement.contest_admin.list:
+  path: '/admin/structure/contests'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\ContestAdminController::contestList'
+    _title: 'Manage contests'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage contests'
+
+engagement.contest_admin.add:
+  path: '/admin/structure/contests/add'
+  defaults:
+    _form: '\Drupal\unccd_engagement\Form\AddContestForm'
+    _title: 'Add contest'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage contests'
+
+engagement.contest_admin.edit:
+  path: '/admin/structure/contests/edit/{id}'
+  defaults:
+    _form: '\Drupal\unccd_engagement\Form\EditContestForm'
+    _title: 'Edit contest'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage contests'
+
+engagement.contest_admin.delete:
+  path: '/admin/structure/contests/delete/{id}'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\ContestAdminController::deleteContest'
+    _title: 'Delete contest'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage contests'
+
+engagement.contest_entry_admin.list:
+  path: '/admin/structure/contests/{contest_id}/entries'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\ContestAdminController::contestEntryList'
+    _title: 'Manage contest entries'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage contests'
+
+engagement.contest_entry_admin.add:
+  path: '/admin/structure/contests/{contest_id}/entries/add'
+  defaults:
+    _form: '\Drupal\unccd_engagement\Form\AddContestEntryForm'
+    _title: 'Add contest entry'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage contests'
+
+engagement.contest_entry_admin.edit:
+  path: '/admin/structure/contests/{contest_id}/edit/{entry_id}'
+  defaults:
+    _form: '\Drupal\unccd_engagement\Form\EditContestEntryForm'
+    _title: 'Edit contest entry'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage contests'
+
+engagement.contest_entry_admin.delete:
+  path: '/admin/structure/contests/{contest_id}/delete/{entry_id}'
+  defaults:
+    _controller: '\Drupal\unccd_engagement\Controller\ContestAdminController::deleteContestEntry'
+    _title: 'Delete contest entry'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'unccd manage contests'
+

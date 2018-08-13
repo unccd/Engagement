@@ -1,0 +1,45 @@
+{#
+    The contest view page
+#}
+<div>
+	<div>
+	    <p>{{ contest.description|raw }}</p>
+	    {% if new_entries_allowed %}
+			<p>The contest is open for new entries</p>
+			<a href="/contest/{{ contest.id }}/enter" class="btn-primary btn">Enter Contest</a>
+		{% endif %}
+	</div>
+	{% if voting_open %}
+	<div class="paragraph">
+		<h2>Entries</h2>
+		<div class="row">
+			{% for entry in entries %}
+				<div class="col-sm-4">
+					{% if contest.type == "photo" %}<div><img src="{{ entry.attachment }}" alt="{{ entry.title }}" /></div>
+					{% endif %}
+					{% if contest.type == "text" or contest.type == "other" %}<div style="font-weight: bold; font-size: 20px;"><a href="{{ entry.attachment }}">{{ entry.title }}</a></div>
+					{% else %}<div style="font-weight: bold; font-size: 20px;">{{ entry.title }}</div>
+					{% endif %}
+					{% if contest.show_number_of_votes %}<div><span style="color: #ff7100; font-weight: bold;">{{ entry.votes }}</span> votes</div>{% endif %}
+					<p>{{ entry.description }}</p>
+					<a href="/contest/{{ contest.id }}/vote/{{ entry.id }}" class="btn-primary btn">Vote</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% elseif not new_entries_allowed %}
+		<p>The contest voting has completed.</p> 
+	{% endif %}
+
+</div>
+
+{# Style overrides #}
+<style>
+	.col-sm-push-3 {
+		left: 1.3% !important;
+	}
+
+	.col-sm-9 {
+		width: 98.7% !important;
+	}
+</style>

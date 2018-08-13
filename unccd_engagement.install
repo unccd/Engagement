@@ -1,0 +1,271 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * @file
+ * Install, update and uninstall functions for the unccd_engagement module.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup unccd_engagement
+ */
+function unccd_engagement_schema() {
+    $schema['unccd_campaigns'] = [
+        'description' => 'Stores data on the unccd campaigns',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'not null' => TRUE,
+                'description' => 'Primary Key: Unique campaign ID.',
+            ],
+            'title' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'Title of the campaign',
+            ],
+            'status' => [
+                'type' => 'int',
+                'size' => 'tiny',
+                'not_null' => TRUE,
+                'default' => 0,
+                'description' => 'Status of the campaign (draft, live...)'
+            ],
+            'button_text' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => 'Suport',
+                'description' => 'Text of the support button',
+            ],
+            'description' => [
+                'type' => 'text',
+                'not null' => TRUE,
+                'description' => 'Description of the campaign',
+            ],
+        ],
+        'primary key' => ['id'],
+        'indexes' => [
+            'title' => ['title'],
+        ],
+    ];
+
+    $schema['unccd_campaign_signatures'] = [
+        'description' => 'Stores signatures on the unccd campaigns',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'not null' => TRUE,
+                'description' => 'Primary Key: Unique signature ID.',
+            ],
+            'campaign_id' => [
+                'type' => 'int',
+                'not_null' => TRUE,
+                'description' => 'ID of the campaign the user signed'
+            ],
+            'ip' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'IP of the user who signed',
+            ],
+            'date' => [
+                'type' => 'datetime',
+                'mysql_type' => 'datetime',
+                'pgsql_type' => 'timestamp without time zone',
+                'sqlite_type' => 'varchar',
+                'sqlsrv_type' => 'smalldatetime',
+                'not null' => TRUE,
+                'description' => 'Date the campaign was supported',
+            ],
+        ],
+        'primary key' => ['id'],
+    ];
+
+    $schema['unccd_contests'] = [
+        'description' => 'Stores data on the unccd contests',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'not null' => TRUE,
+                'description' => 'Primary Key: Unique contest ID.',
+            ],
+            'type' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => 'photo',
+                'description' => 'Type of contest (photo, video, text, etc...)',
+            ],
+            'title' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+                'description' => 'Title of the contest',
+            ],
+            'status' => [
+                'type' => 'int',
+                'size' => 'tiny',
+                'not_null' => TRUE,
+                'default' => 0,
+                'description' => 'Status of the contest (draft, live...)',
+            ],
+            'allow_online_entries' => [
+                'type' => 'int',
+                'size' => 'tiny',
+                'not_null' => TRUE,
+                'default' => 1,
+                'description' => 'Should the users be allowed to submit their entries online',
+            ],
+            'show_number_of_votes' => [
+                'type' => 'int',
+                'size' => 'tiny',
+                'not_null' => TRUE,
+                'default' => 1,
+                'description' => 'Should users be able to see the number of votes each entry has',
+            ],
+            'deadline_for_entries' => [
+                'type' => 'datetime',
+                'mysql_type' => 'datetime',
+                'pgsql_type' => 'timestamp without time zone',
+                'sqlite_type' => 'varchar',
+                'sqlsrv_type' => 'smalldatetime',
+                'not null' => TRUE,
+                'description' => 'Date/time after which new entries are no longer allowed',
+            ],
+            'voting_starts' => [
+                'type' => 'datetime',
+                'mysql_type' => 'datetime',
+                'pgsql_type' => 'timestamp without time zone',
+                'sqlite_type' => 'varchar',
+                'sqlsrv_type' => 'smalldatetime',
+                'not null' => TRUE,
+                'description' => 'Date/time at which voting starts',
+            ],
+            'deadline_for_voting' => [
+                'type' => 'datetime',
+                'mysql_type' => 'datetime',
+                'pgsql_type' => 'timestamp without time zone',
+                'sqlite_type' => 'varchar',
+                'sqlsrv_type' => 'smalldatetime',
+                'not null' => TRUE,
+                'description' => 'Date on which voting ends.',
+            ],
+            'description' => [
+                'type' => 'text',
+                'not null' => TRUE,
+                'description' => 'Description of the contest',
+            ],
+        ],
+        'primary key' => ['id'],
+        'indexes' => [
+            'title' => ['title'],
+        ],
+    ];
+
+    $schema['unccd_contest_entries'] = [
+        'description' => 'Stores entries for contests',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'not null' => TRUE,
+                'description' => 'Primary Key: Unique contest entry ID.',
+            ],
+            'contest_id' => [
+                'type' => 'int',
+                'not_null' => TRUE,
+                'description' => 'ID of the contest the entry is for'
+            ],
+            'title' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'description' => 'Title of the entry',
+            ],
+            'name' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'description' => 'Name of the author',
+            ],
+            'email' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'description' => 'Email of the author',
+            ],
+            'description' => [
+                'type' => 'text',
+                'not null' => TRUE,
+                'description' => 'Description of the entry',
+            ],
+            'date' => [
+                'type' => 'datetime',
+                'mysql_type' => 'datetime',
+                'pgsql_type' => 'timestamp without time zone',
+                'sqlite_type' => 'varchar',
+                'sqlsrv_type' => 'smalldatetime',
+                'not null' => TRUE,
+                'description' => 'Date on which the entry was posted.',
+            ],
+            'attachment_id' => [
+                'type' => 'int',
+                'description' => 'The drupal file id for the uploaded attachment'
+            ],
+            'attachment' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'description' => 'The contest entry attachment URL'
+            ],
+        ],
+        'primary key' => ['id'],
+    ];
+
+    $schema['unccd_contest_votes'] = [
+        'description' => 'Stores votes for contests',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'not null' => TRUE,
+                'description' => 'Primary Key: Unique vote ID.',
+            ],
+            'contest_id' => [
+                'type' => 'int',
+                'not_null' => TRUE,
+                'description' => 'ID of the contest the user voted in'
+            ],
+            'entry_id' => [
+                'type' => 'int',
+                'not_null' => TRUE,
+                'description' => 'ID of the entry the user voted for'
+            ],
+            'ip' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'description' => 'IP of the user who voted',
+            ],
+            'date' => [
+                'type' => 'datetime',
+                'mysql_type' => 'datetime',
+                'pgsql_type' => 'timestamp without time zone',
+                'sqlite_type' => 'varchar',
+                'sqlsrv_type' => 'smalldatetime',
+                'not null' => TRUE,
+                'description' => 'Date on which the vote was cast.',
+            ],
+        ],
+        'primary key' => ['id'],
+    ];
+
+
+    return $schema;
+}

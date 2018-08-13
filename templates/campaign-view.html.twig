@@ -1,0 +1,23 @@
+{#
+    The campaign view page
+#}
+<div class="row">
+	<div class="col-sm-8">
+	    <p>{{ campaign.description|raw }}</p>
+	</div>
+	<div class="col-sm-4">
+	    <p>Join <span style="color: #ff7100; font-weight: bold;">{{ supporters }}</span> people in supporting this campaign!</p>
+	    <a href="/campaign/{{ campaign.id }}/support" class="btn-primary btn">{{ campaign.button_text }}</a>
+	</div>
+</div>
+
+{# Style overrides #}
+<style>
+	.col-sm-push-3 {
+		left: 1.3% !important;
+	}
+
+	.col-sm-9 {
+		width: 98.7% !important;
+	}
+</style>

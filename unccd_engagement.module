@@ -1,0 +1,27 @@
+<?php
+
+function unccd_engagement_theme($existing, $type, $theme, $path) {
+    return [
+        'campaign_view' => [
+            'variables' => [
+                'campaign' => [],
+                'supporters' => 0,
+            ],
+        ],
+        'contest_view' => [
+            'variables' => [
+                'contest' => [],
+                'voting_open' => false,
+                'new_entries_allowed' => false,
+                'entries' => [],
+            ],
+        ],
+        'contest_form_view' => [
+            'variables' => [
+                'form' => [],
+            ],
+        ],
+
+    ];
+}
+

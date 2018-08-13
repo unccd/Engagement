@@ -1,0 +1,424 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"io",
+				"ioutil"
+			],
+			[
+				"new",
+				"newTierNum"
+			],
+			[
+				"old",
+				"oldDivisionNum"
+			],
+			[
+				"tier",
+				"tierToNum"
+			],
+			[
+				"divisi",
+				"divisionToNum"
+			],
+			[
+				"sam",
+				"sameDivision"
+			],
+			[
+				"par",
+				"participants"
+			],
+			[
+				"kdb",
+				"kdasByChampion"
+			],
+			[
+				"aver",
+				"averages"
+			],
+			[
+				"json_",
+				"json_encode"
+			],
+			[
+				"Leagu",
+				"leaguePoints"
+			],
+			[
+				"wardsBy",
+				"wardsByChampion"
+			],
+			[
+				"ward",
+				"wardAverageByRole"
+			],
+			[
+				"wardAver",
+				"wardAverageByChampion"
+			],
+			[
+				"kdaAv",
+				"kdaAverageByRole"
+			],
+			[
+				"kda",
+				"kda_avg_by_role"
+			],
+			[
+				"kdaAverageBy",
+				"kdaAverageByChampion"
+			],
+			[
+				"kdasBy",
+				"kdasByChampion"
+			],
+			[
+				"KDA",
+				"kdaAverage"
+			],
+			[
+				"part",
+				"participant"
+			],
+			[
+				"csAv",
+				"csAverageByChampion"
+			],
+			[
+				"champ",
+				"championIdToString"
+			],
+			[
+				"csAver",
+				"csAverageByRole"
+			],
+			[
+				"pa",
+				"participant"
+			],
+			[
+				"retrieve",
+				"retrieveUserIdFromAPI"
+			],
+			[
+				"retrieveM",
+				"retrieveMatchFromDB"
+			],
+			[
+				"league",
+				"leaguePoints"
+			],
+			[
+				"getUser",
+				"getUserRankedStats"
+			],
+			[
+				"array_key",
+				"array_key_exists"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"url",
+				"urlencode"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/GreenCat/Desktop/UNCCD/backup/www/livebackup/docroot/modules/unccd/unccd_engagement"
+	],
+	"file_history":
+	[
+		"/Applications/At Summer's End/1.txt",
+		"/Applications/At Summer's End/0.txt",
+		"/Applications/Night of the Forget-Me-Nots/nscript.txt",
+		"/Users/GreenCat/Downloads/crass-0.4.14.0/nscript.txt",
+		"/Users/GreenCat/Downloads/My Black Cat/0.txt",
+		"/Applications/Homeless School Girl.app/Contents/MacOS/startwine",
+		"/Users/GreenCat/Downloads/My Black Cat/ons.cfg",
+		"/Applications/Shooting Star Hill.app/Contents/Resources/nscript.dat",
+		"/Users/GreenCat/Downloads/Regional+National .csv",
+		"/Users/GreenCat/Downloads/REGION_ECONOM_27062018170136493.csv",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/kage_005_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_131_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/kage_004_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/kage_003_edited.txt",
+		"/usr/local/etc/php/5.6/php.ini",
+		"/Users/GreenCat/Downloads/key_value-value.bin",
+		"/Users/GreenCat/Desktop/UNCCD/backup/www/livebackup/docroot/core/modules/system/system.links.menu.yml",
+		"/Users/GreenCat/Downloads/iOS_12_Beta_Profile.mobileconfig",
+		"/Users/GreenCat/Desktop/UNCCD/backup/www/backup_www2.Thu/website.sql",
+		"/Users/GreenCat/Desktop/UNCCD/backup/www/backup_www2.Thu/MANIFEST.ini",
+		"/Users/GreenCat/Downloads/Money heist  ses 2 subtitles/episode 1/La.casa.de.papel.S02E01.WEBRip.Netflix.srt",
+		"/Users/GreenCat/Downloads/drupal-8.5.3/modules/eventmap/templates/map-view.html.twig",
+		"/private/var/folders/57/f356xbwn53d0h609hm7lpkmh0000gn/T/ba7c564c-c997-49d3-bdae-320177063171/electra/unjailbreak.sh",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_130_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/kage_002_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_129_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/kage_001_edited.txt",
+		"/Users/GreenCat/Documents/typescript/zappelc/node_modules/moment/src/locale/cv.js",
+		"/Volumes/EMUNAND9SD/gm9/scripts/cleanup_sd_card.gm9",
+		"/Users/GreenCat/Documents/kcauto/kcauto-kai-master/config.ini",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/kage_002.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_128_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/main.go",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/staffroom_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_23_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_22_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_ep_03_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_ep_02_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_ep_01_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_21_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_024_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_023_edited.txt",
+		"/Users/GreenCat/Library/Application Support/Steam/steamapps/common/Higurashi 04 - Himatsubushi/HigurashiEp04.app/Contents/Resources/Data/StreamingAssets/himatsubushi.bat",
+		"/Users/GreenCat/Downloads/Ouroboros ep01-10 finale (848x480 x264)/Ouroboros ep01 (848x480 x264).ass",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_19_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_20_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_022_2_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_022_1_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_021_1_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_021_2_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_18_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_020_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_019_2_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_019_1_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_17_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_16_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_018_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_017_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_15_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_14_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_13_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_016_2_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_016_1_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_015_2_edited.txt",
+		"/Users/GreenCat/Documents/kcbackup/Latest/storage.json",
+		"/Users/GreenCat/Documents/kcbackup/Latest/db.json",
+		"/Users/GreenCat/Downloads/higurashi.no.naku.koro.ni.when.they.cry.s01.e03.watanagashi.first.chapter.(2016).eng.1cd.(6782728)/Watanagashi 1.ass",
+		"/Users/GreenCat/Downloads/higurashi.no.naku.koro.ni.when.they.cry.s01.e01.spirited.away.by.the.demon.first.chapter.(2016).eng.1cd.(6781059)/higurashi.no.naku.koro.ni.when.(6781059).nfo",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_015_1_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_12_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_11_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_10_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_014_2_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_014_1_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_09_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_08_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_013_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_012_edited.txt",
+		"/Users/GreenCat/Library/Application Support/Steam/steamapps/common/Higurashi When They Cry Hou - Ch. 5 Meakashi/HigurashiEp05.app/Contents/Resources/Data/StreamingAssets/Scripts/_meak_014_1.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_011_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_07_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_010_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_06_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_009_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_008_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_05_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_04_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_007_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_006_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_005_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_03_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_004_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_02_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_003_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_002_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_tips_01_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_001_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/_meak_002.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tata_001_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_omake_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_087_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_014_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_013_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_012_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/done/some_011_edited.txt",
+		"/Users/GreenCat/RScripts/M4/1_Variable_Selection.r",
+		"/Users/GreenCat/Downloads/The Body [El Cuerpo].2012.BRRip.x264-VLiS.srt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_011_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_010_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_086_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_009_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_008_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_085_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_084_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_083_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_007_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_082_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_006_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_005_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_004_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/tips_081_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_003_edited.txt",
+		"/Volumes/WII U GAMEZ/wiiu/games/Wii Sports Club/meta/meta.xml",
+		"/Users/GreenCat/Downloads/release/config",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_002_edited.txt",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/done/some_001_edited.txt",
+		"/Users/GreenCat/Downloads/decoded.html",
+		"/Users/GreenCat/Documents/gocode/src/higurashi/some_001_edited.txt"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "unccd_engagement.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

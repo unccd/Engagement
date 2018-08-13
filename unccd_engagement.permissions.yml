@@ -1,0 +1,7 @@
+unccd manage campaigns:
+  title: 'Manage UNCCD Campaigns'
+  description: 'Ability to create, edit and delete the UNCCD Campaigns.'
+
+unccd manage contests:
+  title: 'Manage UNCCD Contests'
+  description: 'Ability to create, edit and delete the UNCCD Contests.'

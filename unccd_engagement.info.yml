@@ -1,0 +1,6 @@
+name: UNCCD Engagement
+description: Contest and campaign functionality
+package: UNCCD
+type: module
+version: 1.0
+core: 8.x

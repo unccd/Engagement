@@ -1,0 +1,17 @@
+engagement.campaign.add_action:
+  route_name: engagement.campaign_admin.add
+  title: 'Add a Campaign'
+  appears_on:
+    - engagement.campaign_admin.list
+
+engagement.contest.add_action:
+  route_name: engagement.contest_admin.add
+  title: 'Add a Contest'
+  appears_on:
+    - engagement.contest_admin.list
+
+engagement.contest_entries.add_action:
+  route_name: engagement.contest_entry_admin.add
+  title: 'Add a Contest Entry'
+  appears_on:
+    - engagement.contest_entry_admin.list
