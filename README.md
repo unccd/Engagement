@@ -30,7 +30,31 @@ The permissions "Manage UNCCD Campaigns" and "Manage UNCCD Contests" can be give
 
 ### Folder structure
 
-TODO
+- /src/Controller/
+    - CampaignAdminController.php The controller for the admin pages to manage campaigns
+    - CampaignController.php The controller for the front-end of the campaigns
+    - ContestAdminController.php The controller for the admin pages to manage contests
+    - ContestsController.php The controller for the front-end of the contests
+- /src/Form/
+    - AddCampaignForm.php The form to add new campaigns in the admin panel
+    - AddContestEntryForm.php The form to add a contests entry from the admin panel
+    - AddContestForm.php The form to add new contests in the admin panel
+    - EditCampaignForm.php The form to edit campaigns in the admin panel
+    - EditContestForm.php The form to edit contests in the admin panel
+   	- EditContestEntryForm.php The form to edit contest entries in the admin panel
+    - PublicContestEntryForm.php The public form to enter contests
+- /src/CampaignStorage.php A class managing the database storage of campaigns
+- /src/ContestStorage.php A class managing the database storage of contests
+- /src/EntryStorage.php A class managing the database storage of entries
+- /templates The view templates of the public pages
+- README.md This file
+- unccd_engagement.info.yml Description of the module
+- unccd_engagement.install A script ran when the module is installed. Adds the database tables.
+- unccd_engagement.link.action.yml A list of actions to add to the admin panel
+- unccd_engagement.links.menu.yml A list of menu entries to add to the admin panel
+- unccd_engagement.module Defines the view templates used by the module
+- unccd_engagement.permissions.yml A list of new permissions added by the module
+- unccd_engagement.routing.yml A list of new routes added by the module (both public and admin panel)
 
 ### Database Schema
 
