@@ -35,7 +35,7 @@ class EditContestForm extends FormBase {
             '#title' => t('Type of contest:'),
             '#options' => [
                 "photo" => 'Photo',
-                "video" => 'Video [Not implemented]',
+                "video" => 'Video',
                 "text" => 'Text',
                 "other" => 'Other'
             ],

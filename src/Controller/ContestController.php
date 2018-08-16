@@ -38,9 +38,12 @@ class ContestController extends ControllerBase {
         // Load entries
         $entries = EntryStorage::loadAllInContest($id);
 
-        // Add number of votes
         foreach($entries as $entry) {
+            // Add number of votes
             $entry->votes = EntryStorage::countVotes($id, $entry->id);
+           
+            // Convert youtube video urls into embeeds
+            if($contest->type == "video") $entry->attachment = $this->convertYoutube($entry->attachment);
         }
 
         // Is the contest still open?
@@ -110,5 +113,13 @@ class ContestController extends ControllerBase {
             '#theme' => 'contest_form_view',
             '#form' => $form
         ];
+    }
+
+    private function convertYoutube($url) {
+        return preg_replace(
+            "/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
+            "$2",
+            $url
+        );
     }
 }

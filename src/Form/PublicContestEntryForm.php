@@ -82,7 +82,14 @@ class PublicContestEntryForm extends FormBase {
                     ],
                 ];
                 break;
-
+            case "video":
+                $form['youtube'] = [
+                    '#type' => 'textfield',
+                    '#title' => "Youtube video:",
+                    '#required' => TRUE,
+                    '#field_prefix' => t('<br>Please upload the video on Youtube and insert the video link here.<br> If you do not want the video to be visible on your Youtube profile, you can mark it as "Unlisted" in the video settings.'),
+                ];
+                break;
             case "text":
                 $form['attachment'] = [
                     '#type' => 'managed_file',
@@ -167,9 +174,13 @@ class PublicContestEntryForm extends FormBase {
             'email' => $form_state->getValue('email'),
             'description' => $form_state->getValue('description'),
         ];
+
         if(!empty($form_state->getValue('attachment'))) {
             $fields['attachment_id'] = $form_state->getValue('attachment')[0];
             $fields['attachment'] = $attachment_url;
+        } else if(!empty($form_state->getValue('youtube'))) {
+            $fields['attachment_id'] = null;
+            $fields['attachment'] = $form_state->getValue('youtube');
         }
 
         EntryStorage::insert($fields);

@@ -17,6 +17,11 @@
 				<div class="col-sm-4">
 					{% if contest.type == "photo" %}<div><img src="{{ entry.attachment }}" alt="{{ entry.title }}" /></div>
 					{% endif %}
+					{% if contest.type == "video" %}
+						<div>
+							<iframe src="https://www.youtube-nocookie.com/embed/{{ entry.attachment }}" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+						</div>
+					{% endif %}
 					{% if contest.type == "text" or contest.type == "other" %}<div style="font-weight: bold; font-size: 20px;"><a href="{{ entry.attachment }}">{{ entry.title }}</a></div>
 					{% else %}<div style="font-weight: bold; font-size: 20px;">{{ entry.title }}</div>
 					{% endif %}

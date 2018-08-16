@@ -29,8 +29,7 @@ class AddContestForm extends FormBase {
             '#title' => t('Type of contest:'),
             '#options' => [
                 "photo" => 'Photo',
-                // https://github.com/unccd/Engagement/issues/1
-                "video" => 'Video [Not implemented]',
+                "video" => 'Video',
                 "text" => 'Text',
                 "other" => 'Other'
             ],

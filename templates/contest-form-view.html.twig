@@ -1,1 +1,32 @@
 {{ form }}
+
+{# Style overrides #}
+<style>
+	.col-sm-push-3 {
+		left: 1.3% !important;
+	}
+
+	.col-sm-9 {
+		width: 98.7% !important;
+	}
+	.hidden-form-field {
+		display: none;
+	}
+</style>
+
+{# Makes the "or other" input box work #}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    	// Hide other field
+    	jQuery(".form-item-hdyk-other").hide();
+
+        // Enable date picker
+		jQuery("#edit-how-did-you-know").on('change', function() {
+		    if (jQuery(this).val() == 'Other'){
+				jQuery(".form-item-hdyk-other").show();
+		    } else {
+				jQuery(".form-item-hdyk-other").hide();
+		    }
+		});
+    });
+ </script>
