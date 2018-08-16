@@ -36,10 +36,25 @@ class EditContestEntryForm extends FormBase {
             '#title' => t('Author name:'),
             '#default_value' => $entry->name,
         ];
+        $form['postal_address'] = [
+            '#type' => 'textarea',
+            '#title' => t('Postal Address:'),
+            '#default_value' => $entry->postal_address,
+        ];
+        $form['country'] = [
+            '#type' => 'textfield',
+            '#title' => t('Country:'),
+            '#default_value' => $entry->country,
+        ];
         $form['email'] = [
             '#type' => 'textfield',
             '#title' => t('Author email:'),
             '#default_value' => $entry->email,
+        ];
+        $form['how_did_you_know'] = [
+            '#type' => 'textfield',
+            '#title' => t('How did you know about the contest?'),
+            '#default_value' => $entry->how_did_you_know,
         ];
         $form['description'] = [
             '#type' => 'textarea',
@@ -141,6 +156,9 @@ class EditContestEntryForm extends FormBase {
             'title' => $form_state->getValue('title'),
             'name' => $form_state->getValue('name'),
             'email' => $form_state->getValue('email'),
+            'postal_address' => $form_state->getValue('postal_address'),
+            'country' => $form_state->getValue('country'),
+            'how_did_you_know' => $form_state->getValue('how_did_you_know'),
             'description' => $form_state->getValue('description'),
         ];
         if(!empty($form_state->getValue('attachment'))) {

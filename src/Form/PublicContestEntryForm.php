@@ -38,6 +38,31 @@ class PublicContestEntryForm extends FormBase {
             '#required' => TRUE,
             '#field_prefix' => t('<br>Your email will not be published. It will only be used to contact you if required.'),
         ];
+        $form['postal_address'] = [
+            '#type' => 'textarea',
+            '#title' => t('Postal Address:'),
+            '#required' => TRUE,
+        ];
+        $form['country'] = [
+            '#type' => 'textfield',
+            '#title' => t('Country:'),
+            '#required' => TRUE,
+        ];
+        $form['how_did_you_know'] = [
+            '#type' => 'select',
+            '#title' => t('How did you know about the contest?'),
+            '#options' => [
+                "Media (TV, radio, newspaper, magazine, etc.)" => 'Media (TV, radio, newspaper, magazine, etc.)',
+                "Social media (Facebook, Twitter, LinkedIn, etc.)" => 'Social media (Facebook, Twitter, LinkedIn, etc.)',
+                "Friend" => 'Friend',
+                "School/Office" => "School/Office",
+                "Other" => 'Other (specify)'
+            ],
+        ];
+        $form['hdyk_other'] = [
+            '#type' => 'textfield',
+            '#title' => t('How did you know about the contest?'),
+        ];
         $form['description'] = [
             '#type' => 'textarea',
             '#title' => t('Description:'),
@@ -66,7 +91,7 @@ class PublicContestEntryForm extends FormBase {
                     '#multiple' => FALSE,
                     '#required' => TRUE,
                     '#upload_validators' => [
-                        'file_validate_extensions' => ['pdf'],
+                        'file_validate_extensions' => ['pdf txt doc docx'],
                         'file_validate_size' => [25600000]
                     ],
                 ];
@@ -86,7 +111,11 @@ class PublicContestEntryForm extends FormBase {
                 ];
                 break;
         }
-
+        $form['tos'] = [
+            '#type' => 'checkbox',
+            '#title' => t('I have read and agree to the contest rules.'),
+            '#required' => TRUE,
+        ];
         $form['contest_id'] = [
             '#type' => 'hidden',
             '#required' => FALSE,
@@ -124,11 +153,17 @@ class PublicContestEntryForm extends FormBase {
             $attachment_url = $file->url();
         }
 
+        if($form_state->getValue('how_did_you_know') == "Other") $hdyk = $form_state->getValue('hdyk_other');
+        else $hdyk = $form_state->getValue('how_did_you_know');
+
         // Save the entry to the database
         $fields = [
             'contest_id' => $form_state->getValue('contest_id'),
             'title' => $form_state->getValue('title'),
             'name' => $form_state->getValue('name'),
+            'postal_address' => $form_state->getValue('postal_address'),
+            'country' => $form_state->getValue('country'),
+            'how_did_you_know' => $hdyk,
             'email' => $form_state->getValue('email'),
             'description' => $form_state->getValue('description'),
         ];

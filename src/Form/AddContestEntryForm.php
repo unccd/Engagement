@@ -31,9 +31,21 @@ class AddContestEntryForm extends FormBase {
             '#type' => 'textfield',
             '#title' => t('Author name:'),
         ];
+        $form['postal_address'] = [
+            '#type' => 'textarea',
+            '#title' => t('Postal Address:'),
+        ];
+        $form['country'] = [
+            '#type' => 'textfield',
+            '#title' => t('Country:'),
+        ];
         $form['email'] = [
             '#type' => 'textfield',
             '#title' => t('Author email:'),
+        ];
+        $form['how_did_you_know'] = [
+            '#type' => 'textfield',
+            '#title' => t('How did you know about the contest?'),
         ];
         $form['description'] = [
             '#type' => 'textarea',
@@ -125,6 +137,9 @@ class AddContestEntryForm extends FormBase {
             'contest_id' => $form_state->getValue('contest_id'),
             'title' => $form_state->getValue('title'),
             'name' => $form_state->getValue('name'),
+            'postal_address' => $form_state->getValue('postal_address'),
+            'country' => $form_state->getValue('country'),
+            'how_did_you_know' => $form_state->getValue('how_did_you_know'),
             'email' => $form_state->getValue('email'),
             'description' => $form_state->getValue('description'),
         ];
