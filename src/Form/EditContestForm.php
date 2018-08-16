@@ -50,6 +50,13 @@ class EditContestForm extends FormBase {
             ],
             '#default_value' => $contest->status,
         ];
+        $form['number_of_votes_allowed'] = [
+            '#type' => 'textfield',
+            '#title' => t('Number of votes per person:'),
+            '#field_prefix' => t('This option allows for users to be able to vote for multiple differen entries in the contest.<br>Only one vote per entry.<br>'),
+            '#required' => TRUE,
+            '#default_value' => $contest->number_of_votes_allowed,
+        ];
         $form['deadline_for_entries'] = [
             '#type' => 'date',
             '#title' => t('Deadline for new entries:'),
@@ -126,6 +133,7 @@ class EditContestForm extends FormBase {
             'title' => $form_state->getValue('title'),
             'type' => $form_state->getValue('type'),
             'status' => $form_state->getValue('status'),
+            'number_of_votes_allowed' => $form_state->getValue('number_of_votes_allowed'),
             'deadline_for_entries' => $form_state->getValue('deadline_for_entries'),
             'voting_starts' => $form_state->getValue('voting_starts'),
             'deadline_for_voting' => $form_state->getValue('deadline_for_voting'),

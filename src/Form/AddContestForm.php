@@ -42,6 +42,13 @@ class AddContestForm extends FormBase {
                 1 => 'Live',
             ],
         ];
+        $form['number_of_votes_allowed'] = [
+            '#type' => 'number',
+            '#title' => t('Number of votes per person:'),
+            '#field_prefix' => t('This option allows for users to be able to vote for multiple differen entries in the contest.<br>Only one vote per entry.<br>'),
+            '#required' => TRUE,
+            '#default_value' => 1
+        ];
         $form['deadline_for_entries'] = [
             '#type' => 'date',
             '#title' => t('Deadline for new entries:'),
@@ -110,6 +117,7 @@ class AddContestForm extends FormBase {
             'title' => $form_state->getValue('title'),
             'type' => $form_state->getValue('type'),
             'status' => $form_state->getValue('status'),
+            'number_of_votes_allowed' => $form_state->getValue('number_of_votes_allowed'),
             'deadline_for_entries' => $form_state->getValue('deadline_for_entries'),
             'voting_starts' => $form_state->getValue('voting_starts'),
             'deadline_for_voting' => $form_state->getValue('deadline_for_voting'),
@@ -119,7 +127,7 @@ class AddContestForm extends FormBase {
         ];
         ContestStorage::insert($fields);
         
-        // Redirect to campaign list
+        // Redirect to contest list
         drupal_set_message($this->t('Contest sucessfully created.'));
         $form_state->setRedirect('engagement.contest_admin.list');
         return;

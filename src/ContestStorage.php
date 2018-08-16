@@ -108,9 +108,23 @@ class ContestStorage {
     }
 
     public static function alreadyVoted($id, $ip) {
+        $votes = $this->userNumberOfVotes($id, $ip);
+        return ($votes > 0);
+    }
+
+    public static function userNumberOfVotes($id, $ip) {
         $select = db_select('unccd_contest_votes', 'vote');
         $select->fields('vote');
         $select->condition('contest_id', $id);
+        $select->condition('ip', $ip);
+        return intval($select->countQuery()->execute()->fetchField());
+    }
+
+    public static function alreadyVotedOnEntry($contest_id, $entry_id, $ip) {
+        $select = db_select('unccd_contest_votes', 'vote');
+        $select->fields('vote');
+        $select->condition('contest_id', $contest_id);
+        $select->condition('entry_id', $entry_id);
         $select->condition('ip', $ip);
         return (intval($select->countQuery()->execute()->fetchField()) > 0);
     }

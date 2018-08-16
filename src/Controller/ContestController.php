@@ -89,9 +89,18 @@ class ContestController extends ControllerBase {
 
         $ip = $_SERVER['REMOTE_ADDR'];
 
-        // check no vote for this ip
-        if(ContestStorage::alreadyVoted($contest_id, $ip)) {
-            drupal_set_message(t('You already voted in this contest.'), 'error', TRUE);
+        // Get number of votes for this ip in contest
+        $number_of_votes = ContestStorage::userNumberOfVotes($contest_id, $ip);
+
+        // Check if user can still vote
+        if($number_of_votes >= $contest->number_of_votes_allowed) {
+            drupal_set_message("You already used your {$contest->number_of_votes_allowed} votes in this contest.", 'error', TRUE);
+            return $this->redirect('engagement.contest.view', ['id' => $contest_id]);
+        }
+
+        // check no vote for this entry with this ip
+        if(ContestStorage::alreadyVotedOnEntry($contest_id, $entry_id, $ip)) {
+            drupal_set_message(t('You already voted for this entry.'), 'error', TRUE);
             return $this->redirect('engagement.contest.view', ['id' => $contest_id]);
         }
         

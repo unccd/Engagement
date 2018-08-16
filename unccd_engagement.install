@@ -134,6 +134,12 @@ function unccd_engagement_schema() {
                 'default' => 1,
                 'description' => 'Should users be able to see the number of votes each entry has',
             ],
+            'number_of_votes_allowed' => [
+                'type' => 'int',
+                'not_null' => TRUE,
+                'default' => 1,
+                'description' => 'The number of votes the users are given in the contest',
+            ],
             'deadline_for_entries' => [
                 'type' => 'datetime',
                 'mysql_type' => 'datetime',
@@ -285,8 +291,9 @@ function unccd_engagement_schema() {
 }
 
 /**
- * First Engagement module update
- * Adds additional fields to the entry submission form
+ * First module update
+ * Adds additional fields to the entry submission form and
+ * a field for the number of allowed votes
  */
 function unccd_engagement_update_8001(&$sandbox) {
     $postal_address_spec = [
@@ -303,9 +310,16 @@ function unccd_engagement_update_8001(&$sandbox) {
         'length' => 255,
         'description' => 'How did the author learn about the contest',
     ];
+    $number_of_votes_allowed_spec = [
+        'type' => 'int',
+        'not_null' => TRUE,
+        'default' => 1,
+        'description' => 'The number of votes the users are given in the contest',
+    ];
 
     $schema = Database::getConnection()->schema();
     $schema->addField('unccd_contest_entries', 'postal_address', $postal_address_spec);
     $schema->addField('unccd_contest_entries', 'country', $country_spec);
     $schema->addField('unccd_contest_entries', 'how_did_you_know', $how_did_you_know_spec);
+    $schema->addField('unccd_contests', 'number_of_votes_allowed', $number_of_votes_allowed_spec);
 }
