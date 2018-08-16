@@ -43,7 +43,15 @@ class ContestController extends ControllerBase {
             $entry->votes = EntryStorage::countVotes($id, $entry->id);
            
             // Convert youtube video urls into embeeds
-            if($contest->type == "video") $entry->attachment = $this->convertYoutube($entry->attachment);
+            if($contest->type == "video") {
+                if(strpos($entry->attachment, 'youtu') !== false) {
+                    $entry->attachment_id = "youtube";
+                    $entry->attachment = $this->convertYoutube($entry->attachment);
+                } else if (strpos($entry->attachment, 'youku') !== false) {
+                    $entry->attachment_id = "youku";
+                    $entry->attachment = $this->convertYouku($entry->attachment);
+                }
+            }
         }
 
         // Is the contest still open?
@@ -128,6 +136,14 @@ class ContestController extends ControllerBase {
         return preg_replace(
             "/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
             "$2",
+            $url
+        );
+    }
+
+    private function convertYouku($url) {
+        return preg_replace(
+            "#(https?:\/\/)?(v|player)\.youku\.com\/(v_show|player\.php|embed)(\/sid)?\/(id_)?(\w+)|(\w+)#",
+            "$6",
             $url
         );
     }

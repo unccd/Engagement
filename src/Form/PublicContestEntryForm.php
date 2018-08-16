@@ -85,9 +85,9 @@ class PublicContestEntryForm extends FormBase {
             case "video":
                 $form['youtube'] = [
                     '#type' => 'textfield',
-                    '#title' => "Youtube video:",
+                    '#title' => "Youtube/Youku video:",
                     '#required' => TRUE,
-                    '#field_prefix' => t('<br>Please upload the video on Youtube and insert the video link here.<br> If you do not want the video to be visible on your Youtube profile, you can mark it as "Unlisted" in the video settings.'),
+                    '#field_prefix' => t('<br>Please upload the video on Youtube/Youku and insert the video link here.<br> If you do not want the video to be visible on your Youtube profile, you can mark it as "Unlisted" in the video settings.'),
                 ];
                 break;
             case "text":

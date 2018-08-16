@@ -19,7 +19,11 @@
 					{% endif %}
 					{% if contest.type == "video" %}
 						<div>
-							<iframe src="https://www.youtube-nocookie.com/embed/{{ entry.attachment }}" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+							{% if entry.attachment_id == "youtube" %}
+								<iframe src="https://www.youtube-nocookie.com/embed/{{ entry.attachment }}" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+							{% elseif entry.attachment_id == "youku" %}
+								<iframe src='https://player.youku.com/embed/{{ entry.attachment }}==' frameborder=0 'allowfullscreen'></iframe>
+							{% endif %}
 						</div>
 					{% endif %}
 					{% if contest.type == "text" or contest.type == "other" %}<div style="font-weight: bold; font-size: 20px;"><a href="{{ entry.attachment }}">{{ entry.title }}</a></div>
